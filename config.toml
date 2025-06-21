@@ -1,0 +1,22 @@
+baseURL = 'https://www.staticguide.org'
+languageCode = "en-us"
+title = "Static Site Guide"
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+home = ["HTML"]
+
+[taxonomies]
+    category = "categories"
+    tag = "tags"
+
+[markup.highlight]
+  noClasses = false
+  style = "github"

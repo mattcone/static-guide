@@ -1,0 +1,317 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: 22px;
+  font-synthesis: none;
+  -moz-font-feature-settings: "kern";
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  font-family: 'equity_a', Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+/* Add this to your main stylesheet */
+pre.chroma {
+  background-color: #f6f8fa;
+  border: 1px solid #d8dee4;
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  margin-bottom: 1.5em;
+}
+
+/* Optional: improve inline code appearance */
+code {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background-color: #f6f8fa;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 90%;
+}
+
+pre code {
+  padding: 0.2rem; /* adjust as needed */
+  display: block;
+  line-height: 1.5;
+  background: #f8f9fa; /* light gray */
+  color: #212529; /* dark text */
+  border-radius: 6px;
+}
+
+.chroma .line.hl {
+  display: block;
+  width: 100%;
+  background-color: #e5e5e5;
+}
+
+.chroma pre,
+.chroma code {
+  display: block;
+  overflow-x: auto;
+  white-space: pre;
+  min-width: max-content;
+}
+
+.aside {
+  background-color: #f9f9f9;
+  border-left: 4px solid #e0e0e0;
+  padding: 1.25rem 1.25rem 1rem;
+  margin: 2rem 0;
+  border-radius: 0.5rem;
+  font-size: inherit;
+}
+
+.aside .label {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.aside p {
+  margin: 0;
+}
+
+.intro-images {
+  margin-left: -25%;
+  width: 150%;
+  text-align: center;
+  margin-bottom: 1.2em;
+}
+
+/* Increase all font sizes on mobile */
+@media (max-width: 767px) {
+  body {
+  /* default is 1rem or 16px */
+  font-size: 20px;
+  }
+  .nav-button {
+    margin-bottom: 25px;
+  }
+  .highlight pre {
+    width: 100%;
+    margin-left: 0;
+  }
+  .intro-images {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+h1 {
+  font-weight: 800;
+  letter-spacing: .008em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  font-family: 'concourse_6',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+h2 {
+  font-weight: 600;
+  letter-spacing: -.01em;
+  line-height: 1.05;
+  margin-top: 40px;
+  left: 1.5cm;
+  font-family: 'concourse_6',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+}
+
+h3, h4, h5, h6 {
+  margin-top: 30px;
+  left: 1.5cm;
+  font-family: 'concourse_6',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+}
+
+p {
+  font-weight: 400;
+  letter-spacing: -.021em;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+th {
+  font-size: 16px;
+}  
+
+.btn-lg {
+  font-size: 18px;
+  font-family: 'concourse_3',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+}  
+
+.table {
+  margin-bottom: 1.5rem;
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+td {
+  font-size: 16px;
+}  
+
+td code {
+  font-size: 14px;
+}
+
+td blockquote {
+  font-size: 16px;
+  margin-bottom: 0px;
+  padding: 10px;
+}
+
+td h1 {
+  font-size: 18px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+.lead {
+  font-size: 28px;
+}  
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  padding: 1em 20px 0.1em 20px;
+  margin-bottom: 30px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+p.chapter {
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 0.1em;
+  font-family: 'concourse_3_caps',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+p.chapter a {
+  color: #333;
+  text-decoration: none; /* no underline */
+}
+
+code {
+  color: black;
+  font-size: 18px;
+}
+
+ol.toc {
+  margin: 0;
+  line-height: 1.5;
+  padding: 0;
+  counter-reset: li;
+}
+
+ol.toc li.contents-intro {
+  margin: 0 0 0 40px;
+  padding: 0;
+  position: relative;
+}
+
+ol.toc li {
+  margin: 0 0 0 40px;
+  padding: 0;
+  position: relative;
+  list-style: none;
+}
+
+ol.toc li.contents:before {
+  content: counter(li) ".";
+  counter-increment: li;
+  position: absolute;
+  width: 2em;
+  text-align: right;
+  left: -2.5em; top: 1px;
+  font-size: 90%;
+}
+
+ol.toc li p {
+  margin: 0;
+}
+
+.toc li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.toc li .part-label {
+  font-family: 'concourse_3_caps', sans-serif;
+  font-size: 17px;
+  color: #777;
+  margin-left: 1em;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .toc li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toc li .part-label {
+    margin-top: 0.2em;
+    margin-left: 0;
+  }
+}
+
+@font-face {
+font-family: equity_a;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('../fonts/equity_a_regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: equity_a;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('../fonts/equity_a_italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: equity_a;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('../fonts/equity_a_bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse_6;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('../fonts/concourse_6_regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse_3_caps;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('../fonts/concourse_3_caps_regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse_3;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('../fonts/concourse_3_bold.woff2') format('woff2');
+}

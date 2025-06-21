@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    {{ hugo.Generator }}
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ if .IsHome }}<title>The Static Site Guide</title>{{ end }}
+    {{ if not .IsHome }}<title>{{ if .Params.chapter }}{{ .Params.chapter }}: {{ end }}{{ .Params.title }} | Static Site Guide</title>{{ end }}
+    {{ if .IsHome }}<meta name="description" content="A book that explains how to build a static website using HTML, CSS, and the Hugo static site generator.">{{ end }}
+    {{ if not .IsHome }}<meta name="description" content="{{ .Params.description }}">{{ end }}
+    {{ if .IsHome }}<link rel="preload" as="image" href="https://staticguide.imgix.net/images/static-site-guide-cover.jpg?w=525&auto=compress,format">{{ end }}
+    <link rel="preload" href="/fonts/equity_a_regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/equity_a_italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/equity_a_bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/concourse_6_regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/concourse_3_caps_regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/concourse_3_bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <meta name="author" content="Matt Cone">
+    <meta name="image" property="og:image" content="https://staticguide.imgix.net/images/static-site-guide-cover.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ if .IsHome }}The Static Site Guide{{ end }}{{ if not .IsHome }}{{ if .Params.chapter }}{{ .Params.chapter }}: {{ end }}{{ .Params.title }}{{ end }}">
+    <meta name="twitter:description" content="{{ if .IsHome }}A book that explains how to build a static website using HTML, CSS, and the Hugo static site generator.{{ end }}{{ if not .IsHome }}{{ .Params.description }}{{ end }}">
+    <meta name="twitter:image" content="https://staticguide.imgix.net/images/static-site-guide-cover.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Matt Cone">
+    <meta property="og:title" content="{{ if .IsHome }}The Static Site Guide{{ end }}{{ if not .IsHome }}{{ if .Params.chapter }}{{ .Params.chapter }}: {{ end }}{{ .Params.title }}{{ end }}">
+    <meta property="og:description" content="{{ if .IsHome }}A book that explains how to build a static website using HTML, CSS, and the Hugo static site generator.{{ end }}{{ if not .IsHome }}{{ .Params.description }}{{ end }}">
+    <meta property="og:url" content="{{ .Permalink | absURL }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="staticguide.org">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://staticguide.imgix.net/images/static-site-guide-cover.jpg">
+    <meta property="og:image:alt" content="The cover of the Static Site Guide book.">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="1039">
+
+    <script defer data-domain="staticguide.org" src="https://hawk.forklabs.com/js/plausible.js"></script>
+  </head>
+    <body>
+    <div class="col-md-6 mx-auto p-3 py-md-5">
+
+      {{ if not .IsHome }}<p class="chapter"><a href="/">The Static Site Guide</a>{{ if .Params.chapter }} &#8226; {{ .Params.chapter }}{{ end }}</p>{{ end }}
+      <h1>{{ .Params.title }}</h1>
+
+      {{ block "main" . -}}{{- end }}
+
+      {{ if not .IsHome }}
+      <div class="container" style="margin-top:40px">
+        <div class="row text-center text-sm-start">
+          <div class="col-12 col-sm d-flex justify-content-sm-start justify-content-center mb-3 mb-sm-0 nav-button">
+            {{ if .Params.previous }}
+              <a class="btn btn-outline-secondary btn-lg w-100 w-sm-auto" href="{{ $.Param "previous.link" }}">&#8592; {{ $.Param "previous.name" }}</a>
+            {{ end }}
+          </div>
+          <div class="col-12 col-sm d-flex justify-content-center mb-3 mb-sm-0 nav-button">
+            <a class="btn btn-outline-secondary btn-lg w-100 w-sm-auto" href="/">Contents</a>
+          </div>
+          <div class="col-12 col-sm d-flex justify-content-sm-end justify-content-center nav-button">
+            {{ if .Params.next }}
+              <a class="btn btn-outline-secondary btn-lg w-100 w-sm-auto" href="{{ $.Param "next.link" }}">{{ $.Param "next.name" }} &#8594;</a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    
+    {{ if not .IsHome }}
+      <script src="/js/anchor.min.js"></script>
+      <script>
+        anchors.options = {
+        placement: 'right',
+        };
+        anchors.add('h2, h3, h4, h5').remove('.no-anchor');
+      </script>
+    {{ end }}
+    </div>
+  </body>
+</html>

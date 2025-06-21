@@ -1,0 +1,13 @@
+<div class="aside {{ .Get "type" | default "tip" }}">
+  <div class="label">
+    {{- if eq (.Get "type") "tip" -}}💡 <strong>Tip</strong>
+    {{- else if eq (.Get "type") "note" -}}📝 <strong>Note</strong>
+    {{- else if eq (.Get "type") "diy" -}}🛠️ <strong>Do It Yourself</strong>
+    {{- else if eq (.Get "type") "warning" -}}⚠️ <strong>Warning</strong>
+    {{- else -}}📌 <strong>Info</strong>
+    {{- end -}}
+  </div>
+  <div class="aside-body">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

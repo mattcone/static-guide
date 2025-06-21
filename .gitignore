@@ -1,0 +1,10 @@
+public/
+.DS_Store
+node_modules
+.env
+.hugo_build.lock
+deploy.sh
+static/fonts
+
+# Local Netlify folder
+.netlify

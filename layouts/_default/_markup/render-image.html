@@ -1,0 +1,11 @@
+{{ if hugo.IsProduction }}
+<img loading="lazy"
+srcset="https://staticguide.imgix.net{{ .Destination | safeURL }}{{ if in .Destination "?" }}&{{ else }}?{{ end }}w=700&auto=compress,format&dpr=1 1x,
+        https://staticguide.imgix.net{{ .Destination | safeURL }}{{ if in .Destination "?" }}&{{ else }}?{{ end }}w=700&auto=format&q=40&dpr=2 2x,
+        https://staticguide.imgix.net{{ .Destination | safeURL }}{{ if in .Destination "?" }}&{{ else }}?{{ end }}w=700&auto=format&q=20&dpr=3 3x"
+src="https://staticguide.imgix.net{{ .Destination | safeURL }}"
+class="img-fluid" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }}
+>
+{{ else }}
+<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} class="img-fluid" />
+{{ end }}
