@@ -10,4 +10,4 @@ You can find the repositories with the example code at <https://github.com/stati
 
 ## License
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE.txt). All code is licensed under an [MIT license](LICENSE-CODE.txt).
+This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE). All code is licensed under an [MIT license](LICENSE-CODE).
