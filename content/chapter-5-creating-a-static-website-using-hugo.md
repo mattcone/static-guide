@@ -2,7 +2,7 @@
 title: "Creating a Static Website Using Hugo"
 chapter: "Chapter 5"
 description: "Chapter 5 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2025-06-10
+date: 2025-06-21
 previous: 
   name: "Chapter 4"
   link: "/chapter-4-styling-elements-with-css/"
@@ -249,10 +249,6 @@ The concept of themes isn't exclusive to Hugo. Virtually every content managemen
 You can change the way a theme looks by modifying the HTML and CSS yourself. Updating the look and feel of a pre-made theme is a lot easier than building your own theme from scratch. And let's be honest. While some people enjoy designing and developing their website from the bottom up using HTML and CSS, the push-button simplicity of themes can be a welcome relief when all you want to do is get your website up and running as quickly as possible.
 
 I'll use the [Terminal theme](https://github.com/panr/hugo-theme-terminal) as an example. It's a clean-looking theme for a personal blog. If you'd prefer to use a different theme for your website, have at it. You can find a complete list of all the available themes for Hugo at <https://themes.gohugo.io/>. Note that the installation and configuration instructions vary slightly from theme to theme.
-
-{{< aside type="note" >}}
-The Terminal theme is archived, meaning the developer has stopped maintaining it. This theme won’t receive any new features or bug fixes, and the functionality or appearance of your website could break unexpectedly due to lack of maintenance. For those reasons, you probably wouldn't want to use this theme for a production website, but it'll work well as a test theme for our purposes. If it stops working, you can always switch to another theme or start fresh using the default template.
-{{< /aside >}}
 
 ### Installing the Theme
 
