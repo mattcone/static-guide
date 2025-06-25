@@ -15,7 +15,7 @@ Sometimes I wonder. *Are people using technology, or is technology using them?*
 
 In times like these, using technology to learn, create, and contribute is a revolutionary act. What we make now—with our own hands, on our own terms—matters more than ever.
 
-So I’m giving this book away—[the site, the content, the source code](https://github.com/mattcone/static-guide)—under a Creative Commons license. Not because it has no value, but because the open web has never been more valuable, or more vulnerable.
+So I’m [giving this book away](https://github.com/mattcone/static-guide) under a Creative Commons license. Not because it has no value, but because the open web has never been more valuable, or more vulnerable.
 
 > In a time that breaks  
 > in cutting pieces all around,  
