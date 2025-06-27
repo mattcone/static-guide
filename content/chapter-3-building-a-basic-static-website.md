@@ -2,7 +2,7 @@
 title: "Building a Basic Static Website"
 chapter: "Chapter 3"
 description: "Chapter 3 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2025-06-01
+date: 2025-06-27
 previous: 
   name: "Chapter 2"
   link: "/chapter-2-publishing-your-web-page/"
@@ -376,7 +376,7 @@ Create the new directory called `family-members`, and then create the `matt.html
         <h2>Hobbies</h2>
         <ul>
           <li>Gardening and spending time outdoors</li>
-          <li>Writing documentation and technical documentation</li>
+          <li>Writing</li>
           <li>Eating ice cream</li>
         </ul>
 
@@ -464,7 +464,7 @@ Now we can add a link to the homepage from the `matt.html` page:
         <h2>Hobbies</h2>
         <ul>
           <li>Gardening and spending time outdoors</li>
-          <li>Writing documentation and technical documentation</li>
+          <li>Writing</li>
           <li>Eating ice cream</li>
         </ul>
 
