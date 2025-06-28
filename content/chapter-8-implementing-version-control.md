@@ -2,7 +2,7 @@
 title: "Implementing Version Control"
 chapter: "Chapter 8"
 description: "Chapter 8 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2025-06-07
+date: 2025-06-28
 previous: 
   name: "Chapter 7"
   link: "/chapter-7-using-a-custom-domain-name/"
@@ -13,7 +13,7 @@ next:
 
 Now it’s time to explore a new topic: version control. Version control can help you keep track of changes to files over time and manage contributions from other individuals.
 
-Version control's premise is simple: Changes to your files should be tracked and reversible. If you've ever saved different versions of a Microsoft Word file by naming it `my-document-version1.doc` and `my-document-version2.doc`, or if you've used the track changes feature in Microsoft Word, you've already used a crude form of version control.
+The premise of version control is simple: changes to your files should be tracked and reversible. If you've ever saved different versions of a Microsoft Word file by naming it `my-document-version1.doc` and `my-document-version2.doc`, or if you've used the track changes feature in Microsoft Word, you've already used a crude form of version control.
 
 A version control system like [Git](https://git-scm.com/) allows us to add this functionality to the source files of our website. With version control, it's easy to tell exactly what changes we made to our website, and when we made them. Rolling changes back to a previous version of our website is simple. 
 
@@ -23,7 +23,7 @@ When combined with an online code-sharing platform like GitHub, version control 
 
 We'll use Git to create a *repository*, which in this case is our entire website directory with all of the associated files. We'll have two instances of the same repository: One on our computer, and one on GitHub. Both instances will hold the files for our website. At any given time, the files in the two instances may be slightly different, but we'll use Git to synchronize the files between the repositories.
 
-GitHub has access controls that we can use to prevent others from accessing or making changes to the files in our repository without permission. We can make our repository public so anyone can view our files, or we can restrict access to our friends and coworkers.
+GitHub has access controls that we can use to prevent others from accessing or making changes to the files in our repository without permission. We can make our repository public so anyone can view our files, or we can keep it private.
 
 In this chapter, we'll install Git and GitHub Desktop on our computer, create a repository for our website's source code, upload our repository to GitHub, and then practice making some changes to our website while using Git.
 
@@ -178,7 +178,7 @@ It's time to add and commit this file to our repository. In GitHub Desktop, clic
 
 Click **Commit to main** to add the file to the repository on your computer, and then click **Push origin** to push the new file to GitHub.
 
-Now if you view your repository's webpage on GitHub, you'll see the content of README.md displayed under the list of files, as shown below.
+Now if you view your repository's webpage on GitHub, you'll see the content of `README.md` displayed under the list of files, as shown below.
 
 ![Adding a commit message in GitHub Desktop](/images/figures/figure-61.png) 
 
@@ -208,7 +208,7 @@ Back in GitHub Desktop, we'll commit the changes to the `new-blog-post` branch a
 
 ### Opening the Pull Request and Merging the Changes to Main
 
-Now we can create the pull request on GitHub to preview our changes and invite others to review them. 
+Let's create the pull request on GitHub to preview our changes and invite others to review them. 
 
 Before we do that, let's review what we've done so far. We created a feature branch called `new-blog-post`, added a new file with our new blog post, committed the change, and pushed the feature branch to GitHub. 
 
@@ -234,7 +234,7 @@ We've merged the pull request with the changes in the `new-blog-post` feature br
 
 ### Pulling the Changes to Our Computer
 
-GitHub's instance of our repository has the changes we just merged, but our computer's instance doesn't. We need to pull the changes from GitHub to our computer's instance of our repository. We can do this with GitHub Desktop.
+GitHub's version of our repository has the changes we just merged, but our computer's instance doesn't. We need to pull the changes from GitHub to our computer's instance of our repository. We can do this with GitHub Desktop.
 
 In GitHub Desktop, switch to the `main` branch. Click **Current Branch** and select `main`, as shown below.
 
@@ -244,7 +244,7 @@ Then click **Fetch origin** to pull the changes from GitHub to your computer. Yo
 
 ![Reviewing the repository's history in GitHub Desktop](/images/figures/figure-66.png)
 
-Now our computer's repository is in sync with GitHub's instance of our repository. If you'd like to see the new blog post in your web browser, you could [preview the website](/chapter-5-creating-a-static-website-using-hugo/#previewing-the-website).
+Now our computer's repository is in sync with GitHub's version of our repository. If you'd like to see the new blog post in your web browser, you could [preview the website](/chapter-5-creating-a-static-website-using-hugo/#previewing-the-website).
 
 ### Deleting the Feature Branch
 
@@ -256,12 +256,46 @@ On GitHub, we can delete the branch from the webpage for our pull request. Click
 
 On our computer, we can delete the branch using GitHub Desktop. Click **Current Branch** and select `new-blog-post`, then select **Delete** from the **Branch** menu.
 
+## Rolling Back Changes
+
+One of the most powerful features of version control is the ability to undo changes when something goes wrong. If your three-year-old child starts mashing your keyboard while you're taking a coffee break, destroying your code and somehow committing the changes to your repository in the process, you can roll back to the previous commit. Let's practice that now by making a change we'll intentionally want to undo.
+
+This is a useful skill to have in your toolkit. Even experienced developers make mistakes or decide they don't like a change after implementing it. With Git, you can easily return to a previous state of your files.
+
+### Making a Change We'll Want to Undo
+
+Let's add a sentence to our `README.md` file that we'll later decide we don't want. Open the `README.md` file in VS Code and add the following line at the end:
+
+```plain
+This is a temporary line that we'll remove using Git.
+```
+
+Save the file. Notice that VS Code shows the file has been modified by displaying an "M" next to the filename.
+
+Let's commit this change to our repository. In GitHub Desktop, you'll see the modified `README.md` file in the Changes tab. Add a commit message like `Add temporary line to README` and click **Commit to main**. Then click **Push origin** to push the change to GitHub.
+
+### Reverting the Commit
+
+Now let's say we've decided we don't want that temporary line after all. We could manually delete it from the file, but let's use Git to revert the entire commit instead. This is especially useful when a commit contains changes to multiple files and you want to undo all of them at once.
+
+In GitHub Desktop, click the **History** tab to see all of your commits. Find the commit with the message `Add temporary line to README` and right-click on it. From the menu, select **Revert Changes In Commit**.
+
+GitHub Desktop will create a new commit that undoes all the changes from the selected commit. You'll see a commit message like `Revert 'Add temporary line to README'`. Click **Commit to main** to apply the revert, then **Push origin** to push the change to GitHub.
+
+If you open `README.md` in VS Code now, you'll see that the temporary line has been removed. Git has successfully rolled back that change while preserving all of your other commits.
+
+### Understanding What Happened
+
+What we just did is called a *revert* in Git terminology. Instead of deleting the problematic commit from history, Git created a new commit that undoes the changes. This approach is safer because it preserves the complete history of what happened to your files.
+
+You can see both commits in your history: the original commit that added the temporary line, and the revert commit that removed it. This creates a clear audit trail of what changes were made and when they were undone.
+
+This same process works for any commit in your repository's history. Whether you want to undo a change you made five minutes ago or five months ago, Git makes it possible to roll back to any previous state of your files. That's the power and peace of mind that version control provides.
+
 ## Next Steps
 
 Pat yourself on the back! You've successfully implemented the Git version control system for your website. Changes to your files are being tracked, and your repository is remotely stored on GitHub. It's not an exaggeration to say that you're using the same versioning system used by major technology companies and Fortune 500 corporations.
 
-You'll sleep well knowing that your files are protected from accidental changes, hardware failure, or even natural disasters. If your three-year-old child starts mashing your keyboard while you're taking a coffee break, destroying your code in the process, you can roll back to the previous commit. If (heaven forbid) your house burns down and your laptop melts, you'll still have all of your files on GitHub.
+You'll sleep well knowing that your files are protected from accidental changes, hardware failure, or even natural disasters. If (heaven forbid) your house burns down and your laptop melts, you'll still have all of your files on GitHub.
 
-Now for the bad news: Because we couldn’t cover everything in this chapter, you still have lots to learn about Git. For example, you'll probably need to learn how to resolve merge conflicts in the future. Take your time! You already know enough of the basics to start using Git now. When you decide you're ready to learn more about Git, refer to the additional learning resources I shared at the beginning of the chapter.
-
-Concentrate on integrating Git into your workflow. Get used to creating feature branches, committing your changes, opening pull requests, and pushing to GitHub. Mastering this process can be frustrating, but stick with it—practice makes perfect.
+You already know enough of the basics to start using Git now. Concentrate on integrating Git into your workflow. Get used to creating feature branches, committing your changes, opening pull requests, and pushing to GitHub. Mastering this process can be frustrating, but stick with it—practice makes perfect.
