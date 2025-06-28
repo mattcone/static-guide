@@ -2,7 +2,7 @@
 title: "Creating a Static Website Using Hugo"
 chapter: "Chapter 5"
 description: "Chapter 5 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2025-06-21
+date: 2025-06-28
 previous: 
   name: "Chapter 4"
   link: "/chapter-4-styling-elements-with-css/"
@@ -70,7 +70,7 @@ We'll start by installing the Homebrew package manager. This is a pre-step of so
 Follow the prompts in your terminal application. You'll be prompted to enter your password and then press the Return key to start the installation. The entire output is displayed below:
 
 ```bash
-mcone@wombat ~ % /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+mcone@roadrunner ~ % /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ==> Checking for `sudo` access (which may request your password)...
 Password:
 ==> This script will install:
@@ -122,8 +122,8 @@ brew --version
 If everything worked, the following output will be displayed:
 
 ```bash
-mcone@wombat ~ % brew --version
-Homebrew 4.2.19
+mcone@roadrunner ~ % brew --version
+Homebrew 4.5.8
 ```
 
 {{< aside type="tip" >}}
@@ -147,8 +147,8 @@ hugo version
 If everything worked, you should see something similar to this output:
 
 ```bash
-mcone@wombat ~ % hugo version
-hugo v0.128.0+extended darwin/arm64 BuildDate=2024-06-25T16:15:48Z VendorInfo=brew
+mcone@roadrunner ~ % hugo version
+hugo v0.147.9+extended+withdeploy darwin/arm64 BuildDate=2025-06-23T08:22:20Z VendorInfo=brew
 ```
 
 You've successfully installed Hugo on your Mac and you're ready to create a new website.
@@ -173,7 +173,7 @@ If everything worked, you should see something similar to this output:
 
 ```powershell
 PS C:\Users\mcone> hugo version
-hugo v0.126.1-3d40aba512931031921463dafc172c0d124437b8+extended windows/amd64 BuildDate=2024-05-15T10:42:34Z VendorInfo=gohugoio
+hugo v0.147.9-3d40aba512931031921463dafc172c0d124437b8+extended windows/amd64 BuildDate=2024-05-15T10:42:34Z VendorInfo=gohugoio
 ``` 
 
 You've successfully installed Hugo on your PC and you're ready to create a new website.
@@ -191,7 +191,7 @@ pwd
 You should see output similar to the following:
 
 ```bash
-mcone@wombat ~ % pwd
+mcone@roadrunner ~ % pwd
 /Users/mcone
 ```
 
@@ -204,7 +204,7 @@ cd /Users/mcone/Documents
 If I enter the `pwd` command again, I'll see that I'm in the `Documents` directory:
 
 ```bash
-mcone@wombat Documents % pwd
+mcone@roadrunner Documents % pwd
 /Users/mcone/Documents
 ```
 
@@ -219,19 +219,20 @@ hugo new site heroic-tiramisu
 If everything works, you should see the following output:
 
 ```plain
-mcone@wombat Documents % hugo new site heroic-tiramisu
+mcone@roadrunner Documents % hugo new site heroic-tiramisu
 Congratulations! Your new Hugo site is created in /Users/mcone/Documents/heroic-tiramisu.
 
-Just a few more steps and you're ready to go:
+Just a few more steps...
 
-1. Download a theme into the same-named folder.
-   Choose a theme from https://themes.gohugo.io/ or
-   create your own with the "hugo new theme <THEMENAME>" command.
-2. Perhaps you want to add some content. You can add single files
-   with "hugo new <SECTIONNAME>/<FILENAME>.<FORMAT>".
-3. Start the built-in live server via "hugo server".
+1. Change the current directory to /Users/mcone/Documents/heroic-tiramisu.
+2. Create or install a theme:
+   - Create a new theme with the command "hugo new theme <THEMENAME>"
+   - Or, install a theme from https://themes.gohugo.io/
+3. Edit hugo.toml, setting the "theme" property to the theme name.
+4. Create new content with the command "hugo new content <SECTIONNAME>/<FILENAME>.<FORMAT>".
+5. Start the embedded web server with the command "hugo server --buildDrafts".
 
-Visit https://gohugo.io/ for quickstart guide and full documentation.
+See documentation at https://gohugo.io/.
 ```
 
 Hugo created a new directory called `heroic-tiramisu`—along with some new files and folders inside that—in our Documents folder. We'll take a look at the directory structure after we install the theme.
@@ -264,15 +265,15 @@ Now that we've successfully installed our theme, we can start customizing it.
 
 ### Configuring the Theme
 
-We need to customize the `config.toml` file for the Terminal theme. The `config.toml` file holds metadata and settings for our Hugo website. Hugo uses these settings to control how the website is built, and our theme uses these settings to fill in variables in the template and change the appearance of our website. 
+We need to customize the `hugo.toml` file for the Terminal theme. The `hugo.toml` file holds metadata and settings for our Hugo website. Hugo uses these settings to control how the website is built, and our theme uses these settings to fill in variables in the template and change the appearance of our website. 
 
 At this point, we'll open the `heroic-tiramisu` directory in our text editor so that we can start editing files.
 
-In VS Code, select **New Window** from the **File** menu, and then select **Open Folder** from the **File** menu. Browse to the the `heroic-tiramisu` directory, select it, and click **Open**. The directory will open in VS Code. Select the `config.toml` file in the sidebar to start editing it, as shown below.
+In VS Code, select **New Window** from the **File** menu, and then select **Open Folder** from the **File** menu. Browse to the the `heroic-tiramisu` directory, select it, and click **Open**. The directory will open in VS Code. Select the `hugo.toml` file in the sidebar to start editing it, as shown below.
 
 ![The heroic-tiramisu directory in VS Code](/images/figures/figure-34.png)
 
-The Terminal theme's documentation provides a [sample configuration file](https://github.com/panr/hugo-theme-terminal?tab=readme-ov-file#how-to-configure) that you can use as a starting part. That file contains every possible setting for the Terminal theme, which is overkill for our needs. To simplify things, I've customized the defaults and provided them below so that you can copy and paste them into your `config.toml` file. One line I want to draw your attention to is `theme = "terminal"` which tells Hugo to use the Terminal theme.
+The Terminal theme's documentation provides a [sample configuration file](https://github.com/panr/hugo-theme-terminal?tab=readme-ov-file#how-to-configure) that you can use as a starting part. That file contains every possible setting for the Terminal theme, which is overkill for our needs. To simplify things, I've customized the defaults and provided them below so that you can copy and paste them into your `hugo.toml` file. One line I want to draw your attention to is `theme = "terminal"` which tells Hugo to use the Terminal theme.
 
 {{< aside type="tip" >}}
 The Hugo configuration file is written in [TOML](https://toml.io/en/), a file format for configuration files. That's why the file has the `.toml` file extension and the odd formatting of the settings below.
@@ -282,7 +283,7 @@ The Hugo configuration file is written in [TOML](https://toml.io/en/), a file fo
 baseURL = "/"
 languageCode = "en-us"
 theme = "terminal"
-paginate = 5
+pagination.pagerSize = 5
 
 [params]
   contentTypeName = "posts"
@@ -298,7 +299,7 @@ paginate = 5
     subtitle = "A delicious blog"
     owner = "Heroic Tiramisu"
     keywords = ""
-    copyright = "© 2024 Heroic Tiramisu"
+    copyright = "© 2025 Heroic Tiramisu"
     menuMore = "Show more"
     readMore = "Read more"
     readOtherPosts = "Read other posts"
@@ -312,7 +313,7 @@ paginate = 5
       logoHomeLink = "/"
 ```
 
-Save the changes to the `config.toml` file. We've finished installing and configuring the theme. Now we can see what it looks like!
+Save the changes to the `hugo.toml` file. We've finished installing and configuring the theme. Now we can see what it looks like!
 
 ## Previewing the Website
 
@@ -327,27 +328,28 @@ hugo serve
 If everything works, and the server starts, we'll see the following output:
 
 ```bash
-mcone@wombat heroic-tiramisu % hugo serve
-Watching for changes in /Users/mcone/Library/CloudStorage/Dropbox/Static Guide/heroic-tiramisu/{archetypes,assets,content,data,layouts,static,themes}
-Watching for config changes in /Users/mcone/Library/CloudStorage/Dropbox/Static Guide/heroic-tiramisu/config.toml, /Users/mcone/Library/CloudStorage/Dropbox/Static Guide/heroic-tiramisu/themes/terminal/config.toml
+mcone@roadrunner heroic-tiramisu % hugo serve
+Watching for changes in /Users/mcone/Documents/heroic-tiramisu/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /Users/mcone/Documents/heroic-tiramisu/hugo.toml, /Users/mcone/heroic-tiramisu/themes/terminal/config.toml
 Start building sites …
-hugo v0.128.0+extended darwin/arm64 BuildDate=2024-06-25T16:15:48Z VendorInfo=brew
+hugo v0.147.9+extended+withdeploy darwin/arm64 BuildDate=2025-06-23T08:22:20Z VendorInfo=brew
 
-                   | EN
--------------------+-----
-  Pages            | 14
-  Paginator pages  |  0
-  Non-page files   |  0
-  Static files     | 10
-  Processed images |  0
-  Aliases          |  2
-  Cleaned          |  0
 
-Built in 85 ms
+                  │ EN
+──────────────────┼────
+ Pages            │  8
+ Paginator pages  │  0
+ Non-page files   │  0
+ Static files     │  5
+ Processed images │  0
+ Aliases          │  1
+ Cleaned          │  0
+
+Built in 21 ms
 Environment: "development"
 Serving pages from disk
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
-Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 
@@ -358,3 +360,7 @@ Now we can open the website in our web browser. See the URL in the output above?
 It doesn't look like much right now since we can only see the header and footer, but we’ll soon add content and see the full layout in action.
 
 Let's stop the server for now. Switch back to the Terminal application and press both the Control and C keys on the keyboard. Later, after we add some content, we'll start the server again to see what our website looks like with blog posts.
+
+{{< aside type="tip" >}}
+You can view the completed website's source code on [GitHub](https://github.com/staticguide/chapter-5).
+{{< /aside >}}
