@@ -173,7 +173,7 @@ If everything worked, you should see something similar to this output:
 
 ```powershell
 PS C:\Users\mcone> hugo version
-hugo v0.147.9-3d40aba512931031921463dafc172c0d124437b8+extended windows/amd64 BuildDate=2024-05-15T10:42:34Z VendorInfo=gohugoio
+hugo v0.147.9-3d40aba512931031921463dafc172c0d124437b8+extended windows/amd64 BuildDate=2025-06-15T10:42:34Z VendorInfo=gohugoio
 ``` 
 
 You've successfully installed Hugo on your PC and you're ready to create a new website.

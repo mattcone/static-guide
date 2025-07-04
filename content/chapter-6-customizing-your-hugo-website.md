@@ -2,7 +2,7 @@
 title: "Customizing Your Hugo Website"
 chapter: "Chapter 6"
 description: "Chapter 6 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2024-06-27
+date: 2025-07-04
 previous: 
   name: "Chapter 5"
   link: "/chapter-5-creating-a-static-website-using-hugo/"
@@ -15,12 +15,12 @@ We've installed a theme and customized it, but as we just saw, our website is st
 
 ## Creating a Blog Post
 
-Since static sites are just collections of files, we can manually create a new plain text file for our blog post. I've generated a sample blog post that we can use as an example. Using VS Code, copy and paste the following text into a new file and save it in `heroic-tiramisu/content/posts/my-first-post.md`.
+Since static sites are just collections of files, we can manually create a new plain text file for our blog post. I've generated a sample blog post that we can use as an example. Using VS Code, copy and paste the following text into a new file and save it in `heroic-tiramisu/content/posts/my-first-post.md`. Create the new `posts` directory in the `content` directory if it doesn't exist.
 
 ```md
 +++
 title = "My First Post"
-date = "2023-01-02T16:38:40-07:00"
+date = "2025-07-03T16:38:40-07:00"
 author = "Me"
 draft = false
 +++
@@ -96,7 +96,7 @@ hugo new posts/my-newest-post.md
 The first part of the command (`hugo new`) tells Hugo to create a new file using the `posts.md` archetype in the location we specify in the second part of the command (`posts/my-newest-post.md`). If everything works, you should see the following output:
 
 ```bash
-mcone@wombat heroic-tiramisu % hugo new posts/my-newest-post.md
+mcone@roadrunner heroic-tiramisu % hugo new posts/my-newest-post.md
 Content "/Users/mcone/Documents/heroic-tiramisu/content/posts/my-newest-post.md" created
 ```
 
@@ -105,7 +105,7 @@ Let's open the file Hugo created for our new blog post in VS Code and look at it
 ```md
 +++
 title = "My Newest Post"
-date = "2023-01-16T09:43:47-07:00"
+date = "2025-07-03T19:43:47-07:00"
 author = ""
 draft = "false"
 +++
@@ -122,7 +122,7 @@ Now we can update our front matter to include the cover image:
 ```md {hl_lines=[5]}
 +++
 title = "My Newest Post"
-date = "2023-01-16T09:43:47-07:00"
+date = "2025-07-03T19:43:47-07:00"
 author = "Me"
 cover = "img/old-town.jpg"
 draft = "false"
@@ -141,14 +141,14 @@ Our blog post is up! If we wanted to continue building out our blog post, we cou
 
 ## Adding an About Page
 
-We know how to create blog posts, but what about "evergreen" pages linked to in the top navigation, like an About page? The Terminal theme has support for these types of pages built in. Let's add one now.
+We know how to create blog posts, but what about *evergreen pages* that don’t change frequently, like an About page? The Terminal theme has support for these types of pages built in. Let's add one now.
 
 Using VS Code, create a new file called `about.md` in `heroic-tiramisu/content/`, and then copy and paste the following content into the file:
 
 ```md
 +++
 title = "About Heroic Tiramisu"
-date = "2023-01-16"
+date = "2025-07-03"
 author = "Me"
 +++
 
@@ -157,13 +157,13 @@ This is the about page for Heroic Tiramisu!
 
 Save the changes to the `about.md` file. 
 
-Now we need to update the `config.toml` file to add the link to the About page in the top navigation. The Terminal theme will use this information to create the link in the top navigation. Open the `config.toml` file in VS Code and add the highlighted lines shown below to the bottom of the file.
+Now we need to update the `hugo.toml` file to add the link to the About page in the top navigation. The Terminal theme will use this information to create the link in the top navigation. Open the `hugo.toml` file in VS Code and add the highlighted lines shown below to the bottom of the file.
 
 ```toml {hl_lines=["33-37"]}
 baseURL = "/"
 languageCode = "en-us"
 theme = "terminal"
-paginate = 5
+pagination.pagerSize = 5
 
 [params]
   contentTypeName = "posts"
@@ -179,7 +179,7 @@ paginate = 5
     subtitle = "A delicious example site for the Static Guide."
     owner = "Heroic Tiramisu"
     keywords = ""
-    copyright = "© 2024 Heroic Tiramisu"
+    copyright = "© 2025 Heroic Tiramisu"
     menuMore = "Show more"
     readMore = "Read more"
     readOtherPosts = "Read other posts"
@@ -199,7 +199,7 @@ paginate = 5
         url = "/about"
 ```
 
-Save the changes to the `config.toml` file. 
+Save the changes to the `hugo.toml` file. 
 
 Let's preview our website again. If you left the Hugo server running in your terminal application, you can switch back to your web browser to see the updates—your web browser should have reloaded the changes automatically. You should see the link to the About page in the top navigation, as shown below. 
 
@@ -233,115 +233,11 @@ Let's save the changes to the `footer.html` file and preview our website again. 
 
 ![The updated footer text on our website](/images/figures/figure-40.png)
 
-You just modified your instance of the Terminal theme. Now that you know how to modify the theme, you're well on your way to making other changes!
+You just modified your instance of the Terminal theme. Now that you know how to find and modify theme files, you can customize almost anything about your site's appearance. The key is using VS Code's search feature to locate the relevant files, then applying your HTML and CSS knowledge to make changes.
 
-### Adding a New Color to the Theme
-
-By many measures, the update to the footer was easy. We knew what we wanted to change. We searched for the phrase, found the relevant file, and modified a single line. But themes can be complicated, and it’s not always immediately apparent how to change something. In the future, making other modifications might prove more difficult.
-
-Take the Terminal theme's color options, for example. The theme provides several colors to choose from out of the box. We specify one of those colors in the `config.toml` file to automatically apply it to our website's color palette—right now, we have it set to orange. But what if we want to add a custom color? A quick review of the Terminal theme's documentation confirms that there's no easy way to do that.
-
-Remember what we discussed earlier about how it’s critically important to [embrace curiosity with dogged determination](/chapter-4-styling-elements-with-css/#an-aside-on-embracing-curiosity)? This is a perfect example of that. Maybe you're in a position where you *need* to use a custom color. If you can't figure out a way to add the custom color to the Terminal theme, you might have to switch to a different theme and start the process of customization all over again.
-
-As it turns out, there is a way to add a custom color to this theme, but we'll need to figure out how to do it on our own. Let's start by using VS Code's search feature again. We can search for one of the color names—I'll search for `orange`, which is the default color for this theme. There are several search results, as shown below.
-
-![Search results for the color orange](/images/figures/figure-42.png)
-
-How do we know which file to look at? If you were working on this alone, without my help, you'd have a couple ways of going about this. You could open every file, one by one, and inspect the contents for clues. That's not a bad idea. You could probably eliminate most, if not all, of the files based on what you already know about HTML and CSS.
-
-However, a better approach might be pausing to consider what mechanism is being used to set the color. We learned earlier that the color for HTML elements can be specified in CSS. That's probably what's happening here. Initially, I assumed that the color was being specified in CSS, but none of the search results are CSS files. Then I realized that the theme might be passing a variable to the CSS file. 
-
-I opened the `heroic-tiramisu/themes/terminal/layouts/partials/head.html` file to have a look. This file contains the HTML that appears at the beginning of all of our web pages. That's relevant to the issue at hand, because CSS is specified between the `<head></head>` tags. I saw the following code in `head.html`, starting on line 10:
-
-```html {hl_lines=[10]}
-{{ $defaultStyles := resources.Get "css/style.scss" }}
-<!-- Local Theme Variables -->
-{{ if and (isset .Params "color") (not (eq .Params.color "")) }}
-  {{ $localColorCss := resources.Get (printf "css/color/%s.scss" .Params.color) }}
-  {{ $localCss := slice $localColorCss $defaultStyles | resources.Concat (printf "css/%s-local.scss" .Params.color) }}
-  {{ $localColorStyles := $localCss | resources.ToCSS }}
-  <link rel="stylesheet" href="{{ $localColorStyles.Permalink }}">
-{{ else }}
-  <!-- Theme Variables -->
-  {{ $colorCss := resources.Get (printf "css/color/%s.scss" ($.Site.Params.ThemeColor | default "orange")) }}
-  {{ $css := slice $colorCss $defaultStyles | resources.Concat "css/base.scss" }}
-  {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed" "enableSourceMap" true "precision" 6 "includePaths" (slice "node_modules")) }}
-  {{ $styles := $css | resources.ToCSS $options }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}">
-{{ end }}
-```
-
-If you're scratching your head and thinking you've never seen anything that looks quite like this, you're right. You're looking at code written in the Go templating language. The syntax is a bit odd, so I don't expect you to understand any of it. But I did highlight one of the lines above—take a look at that one. This line holds the key to the custom color puzzle.
-
-The code is taking the value of the `ThemeColor` parameter we set in our `config.toml` file and printing it into a file path to load a file. The `printf "css/color/%s.scss"` bit provides us with a clue. The first part (`css/color/`) is the directory path, and the `%s.scss` bit is a file name where the `%s` is the name of the color we set for `themeColor` parameter.
-
-Let's look in the directory. The `css/color` path is relative to the fully-built website, so if you were working on your own, without my help, you'd have to do a bit of sleuthing to find the directory. In this case, I'll just give the correct path: `heroic-tiramisu/themes/terminal/assets/css/color`. Sure enough, there are CSS files in that directory for each of the Terminal theme's default colors, as shown below. Each file contains the color's hex code.
-
-![The Terminal theme's color CSS files](/images/figures/figure-41.png)
-
-Now we can guess how the theme's color system works. The user specifies a color using the `themeColor` parameter in the `config.toml` file, the `head.html` reads the value of the `themeColor` parameter, and then writes it into the path to a file with the same name as the color specified in `heroic-tiramisu/themes/terminal/assets/css/color`. 
-
-Assuming this is true, the way to add a custom color is to create a new file with the name of the custom color in `heroic-tiramisu/themes/terminal/assets/css/color` and then set the `themeColor` parameter to the name of that custom color. Let's try that now.
-
-Using VS Code, create a new file in `heroic-tiramisu/themes/terminal/assets/css/color` and name it `turquoise.scss`. Copy and paste the following content, which contains the hex code for the color turquoise, into the file:
-
-```scss
-$accent: #40E0D0;
-```
-
-Save the changes to the `turquoise.scss` file. Now open the `config.toml` file and set the `themeColor` parameter to `turquoise`, as shown below. 
-
-```toml {hl_lines=[8]}
-baseURL = "/"
-languageCode = "en-us"
-theme = "terminal"
-paginate = 5
-
-[params]
-  contentTypeName = "posts"
-  themeColor = "turquoise"
-  showMenuItems = 1
-  fullWidthTheme = false
-  centerTheme = true
-
-[languages]
-  [languages.en.params]
-    languageName = "English"
-    title = "Heroic Tiramisu"
-    subtitle = "A delicious example site for the Static Guide."
-    owner = "Heroic Tiramisu"
-    keywords = ""
-    copyright = "© 2024 Heroic Tiramisu"
-    menuMore = "Show more"
-    readMore = "Read more"
-    readOtherPosts = "Read other posts"
-    newerPosts = "Newer posts"
-    olderPosts = "Older posts"
-    missingContentMessage = "Page not found..."
-    missingBackButtonLabel = "Back to homepage"
-
-    [languages.en.params.logo]
-      logoText = "Heroic Tiramisu"
-      logoHomeLink = "/"
-
-    [languages.en.params.menu]
-      [[languages.en.menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about"
-```
-
-Now we can preview our website again. For a change this big that affects both the CSS and the configuration file of the website, we should stop and restart the Hugo server. If you left the Hugo server running in your terminal application, stop it by pressing both the Control and C keys on the keyboard. Then start it again by entering the following command:
-
-```bash 
-hugo serve
-```
-
-Now you can refresh the website in your web browser. You should see the turquoise color being used as the theme color, as shown below.
-
-![The website rendered with turquoise color](/images/figures/figure-43.png)
-
-We did it. We successfully figured out how to add a new color to the theme, and then we added our own. This was a challenging puzzle. If you can figure out something like this, you can change virtually any part of the theme. The sky's the limit!
+{{< aside type="tip" >}}
+You can view the completed website's source code on [GitHub](https://github.com/staticguide/chapter-6).
+{{< /aside >}}
 
 ### Cleaning Up
 
@@ -378,7 +274,7 @@ If everything works, you should see the following output:
 
 ```bash
 Start building sites …
-hugo v0.128.0+extended darwin/arm64 BuildDate=2024-06-25T16:15:48Z VendorInfo=brew
+hugo v0.147.9+extended darwin/arm64 BuildDate=2025-07-04T16:15:48Z VendorInfo=brew
 
                    | EN
 -------------------+-----
