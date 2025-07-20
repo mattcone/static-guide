@@ -2,7 +2,7 @@
 title: "Implementing Version Control"
 chapter: "Chapter 9"
 description: "Chapter 9 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2025-06-28
+date: 2025-07-20
 previous: 
   name: "Chapter 8"
   link: "/chapter-8-using-a-custom-domain-name/"
@@ -134,7 +134,7 @@ We'll need to enter some information about our remote repository. The most impor
 
 To avoid confusion, I recommend using the same name as your website directory. That’s what I’ll do here. When you're finished, click the **Publish Repository** button. GitHub Desktop will publish your repository on GitHub. 
 
-You can view the webpage for your repository by selecting **View on GitHub** from the **Repository** menu. The GitHub URL for your repository follows a standard format: `https://github.com/username/repository-name`. For example, the URL for the repository I created is <https://github.com/heroictiramisu/heroic-tiramisu>. These URLs are permanent, so if you made your repository public, you can share the URL with friends and they'll be able to view your repository on GitHub.
+You can view the webpage for your repository by selecting **View on GitHub** from the **Repository** menu. The GitHub URL for your repository follows a standard format: `https://github.com/username/repository-name`. For example, the URL for the repository I created is `https://github.com/heroictiramisu/heroic-tiramisu`. These URLs are permanent, so if you made your repository public, you can share the URL with friends and they'll be able to view your repository on GitHub.
 
 At this point, your repository's webpage on GitHub should look similar to mine, as shown below. 
 

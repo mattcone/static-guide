@@ -2,7 +2,7 @@
 title: "Setting up Continuous Deployment"
 chapter: "Chapter 10"
 description: "Chapter 10 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2025-06-07
+date: 2025-07-20
 previous: 
   name: "Chapter 9"
   link: "/chapter-9-implementing-version-control/"
@@ -25,9 +25,7 @@ The instructions in this chapter are written for Netlify, but you can apply the 
 
 ## Connecting Netlify to GitHub
 
-We'll enable the continuous deployment feature for our site in Netlify by linking our GitHub repository to our Netlify account. To do this, log in to Netlify, click **Sites**, and then select your website. From the sidebar, click **Site configuration**, and then click **Build & deploy**. 
-
-The continuous deployment settings are in the **Continuous deployment** section, as shown below. Click the **Link repository** button. 
+We'll enable the continuous deployment feature for our site in Netlify by linking our GitHub repository to our Netlify account. To do this, log in to Netlify and select your project. From the sidebar, click **Project configuration**, and then click **Continuous Deployment**. Click the **Link repository** button, as shown below. 
 
 ![Continuous deployment setting in Netlify](/images/figures/figure-68.png)
 
@@ -47,7 +45,7 @@ Back on the Netlify website, select your website's repository, as shown below.
 
 ![Selecting the GitHub repository in Netlify](/images/figures/figure-72.png)
 
-On the next page, you'll see settings related to how Netlify builds your website. You can leave these set to their default values. Netlify can automatically detect that you're building a Hugo website, and it will use the `hugo` command. After you've reviewed the settings, click the **Deploy** button. 
+On the next page, you'll see settings related to how Netlify builds your website. You can leave these set to their default values. Netlify will automatically detect that you're building a Hugo website, and it will use the `hugo` command. After you've reviewed the settings, click the **Deploy** button. 
 
 Netlify will check out your repository, build your website, and deploy it. We've set up continuous deployment! The next time we push a change to the `main` branch, Netlify will automatically deploy it to our website.
 
@@ -88,7 +86,7 @@ Using VS Code, copy and paste the following content into a new file called `netl
   command = "hugo --gc --minify"
 
 [context.production.environment]
-  HUGO_VERSION = "0.125.3"
+  HUGO_VERSION = "0.148.1"
 
 [[headers]]
   for = "/*"
@@ -106,7 +104,7 @@ Let's talk about what's going on here.
 
 First, we provide the command for building the website. The build command (`hugo --gc --minify`) is recommended in the [Hugo documentation](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/) for Netlify. The `gc` flag removes unused cache files, and the `minify` flag minifies HTML content to reduce the size of our files so they can be delivered faster.
 
-Next, we specify the version of Hugo that Netlify will use to build the site (`HUGO_VERSION = "0.125.3"`). New Hugo releases can add features that unexpectedly change the look and feel of our website. We eliminate the potential for surprises on our production website by specifying a version of Hugo that we've tested.
+Next, we specify the version of Hugo that Netlify will use to build the site (`HUGO_VERSION = "0.148.1"`). New Hugo releases can add features that unexpectedly change the look and feel of our website. We eliminate the potential for surprises on our production website by specifying a version of Hugo that we've tested.
 
 ### HTTP Headers
 

@@ -2,7 +2,7 @@
 title: "Creating a Static Website Using Hugo"
 chapter: "Chapter 5"
 description: "Chapter 5 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2025-07-19
+date: 2025-07-20
 previous: 
   name: "Chapter 4"
   link: "/chapter-4-styling-elements-with-css/"
@@ -20,10 +20,6 @@ But there are some potential problems with continuing to do things this way. The
 Content duplication is another problem. For example, if we wanted to update the top navigation bar of our website, we might need to update the code for *every* individual page, since each HTML document includes the code for the navigation elements. We can do better.
 
 The website we built in the previous section was a good example, but it's time to set it aside. In this section, we'll use a static site generator to create a personal blog using a pre-made theme.
-
-{{< aside type="tip" >}}
-You can find the source code for the website we're about to create in the [GitHub repository](https://github.com/heroictiramisu/heroic-tiramisu).
-{{< /aside >}}
 
 ## What's a Static Site Generator?
 
@@ -148,7 +144,7 @@ If everything worked, you should see something similar to this output:
 
 ```bash
 mcone@roadrunner ~ % hugo version
-hugo v0.147.9+extended+withdeploy darwin/arm64 BuildDate=2025-06-23T08:22:20Z VendorInfo=brew
+hugo v0.148.1+extended+withdeploy darwin/arm64 BuildDate=2025-07-11T12:56:21Z VendorInfo=brew
 ```
 
 You've successfully installed Hugo on your Mac and you're ready to create a new website.
@@ -173,7 +169,7 @@ If everything worked, you should see something similar to this output:
 
 ```powershell
 PS C:\Users\mcone> hugo version
-hugo v0.147.9-3d40aba512931031921463dafc172c0d124437b8+extended windows/amd64 BuildDate=2025-06-15T10:42:34Z VendorInfo=gohugoio
+hugo v0.148.1-3d40aba512931031921463dafc172c0d124437b8+extended windows/amd64 BuildDate=2025-07-11T10:42:34Z VendorInfo=gohugoio
 ``` 
 
 You've successfully installed Hugo on your PC and you're ready to create a new website.
@@ -332,7 +328,7 @@ mcone@roadrunner heroic-tiramisu % hugo serve
 Watching for changes in /Users/mcone/Documents/heroic-tiramisu/{archetypes,assets,content,data,i18n,layouts,static,themes}
 Watching for config changes in /Users/mcone/Documents/heroic-tiramisu/hugo.toml, /Users/mcone/heroic-tiramisu/themes/terminal/hugo.toml
 Start building sites …
-hugo v0.147.9+extended+withdeploy darwin/arm64 BuildDate=2025-06-23T08:22:20Z VendorInfo=brew
+hugo v0.148.1+extended+withdeploy darwin/arm64 BuildDate=2025-07-11T08:22:20Z VendorInfo=brew
 
 
                   │ EN

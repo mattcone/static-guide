@@ -274,7 +274,7 @@ If everything works, you should see the following output:
 
 ```bash
 Start building sites …
-hugo v0.147.9+extended darwin/arm64 BuildDate=2025-07-04T16:15:48Z VendorInfo=brew
+hugo v0.148.1+extended darwin/arm64 BuildDate=2025-07-11T16:15:48Z VendorInfo=brew
 
                    | EN
 -------------------+-----
