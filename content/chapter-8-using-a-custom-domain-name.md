@@ -2,7 +2,7 @@
 title: "Using a Custom Domain Name"
 chapter: "Chapter 8"
 description: "Chapter 8 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2025-06-07
+date: 2025-07-20
 previous: 
   name: "Chapter 7"
   link: "/chapter-7-extending-your-hugo-website/"
@@ -79,7 +79,7 @@ Now it's time to connect your domain name to your website.
 
 We need to tell Netlify about our domain name so we can connect it to our website. 
 
-Log in to Netlify, then click the **Domain management** link. The domain settings are in the **Production domains** section, as shown below. Click the **Add a Domain** button.
+Log in to Netlify, select your project, and click **Domain management**. The domain settings are in the **Production domains** section, as shown below. Click the **Add a Domain** button.
 
 ![Accessing the domain settings in Netlify](/images/figures/figure-18.png)
 
@@ -99,7 +99,7 @@ We'll add the DNS records in the Cloudflare interface, but first, we need to get
 
 ![Finding the DNS target information in Netlify](/images/figures/figure-20.png)
 
-After you click an **Awaiting External DNS** link, you'll see the window shown below. I clicked the link for `www.heroictiramisu.com`. The `sensational-duckanoo-efb1d0.netlify.app` bit is the target—that's the information we need to create the DNS record in the Cloudflare interface. 
+After you click an **Awaiting External DNS** link, you'll see the window shown below. I clicked the link for `www.heroictiramisu.com`. The `stellar-beignet-a4cdce.netlify.app` bit is the target—that's the information we need to create the DNS record in the Cloudflare interface. 
 
 ![Copying the DNS target information from the Netlify interface](/images/figures/figure-21.png)
 
@@ -109,7 +109,7 @@ Now that we have the target information, we can create the DNS record. In the Cl
 
 We'll fill out the fields for the DNS record as shown below. 
 
-The type of DNS record we're adding is called a *CNAME record*, so select `CNAME` from the **Type** menu. Type `www` in the **Name** field, and enter whatever target you copied from the Netlify interface in the **Target** field (in this case, it's `sensational-duckanoo-efb1d0.netlify.app`). Be sure to turn off the **Proxy status** setting so it's set to DNS only.
+The type of DNS record we're adding is called a *CNAME record*, so select `CNAME` from the **Type** menu. Type `www` in the **Name** field, and enter whatever target you copied from the Netlify interface in the **Target** field (in this case, it's `stellar-beignet-a4cdce.netlify.app`). Be sure to turn off the **Proxy status** setting so it's set to DNS only.
 
 {{< aside type="tip" >}}
 Leaving the Proxy status setting enabled can cause problems that are difficult to troubleshoot. When that setting is enabled, Cloudflare will *cache* our website. The problem is that Netlify already caches our website, so we'll end up with two different cached versions of our website!

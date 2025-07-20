@@ -2,7 +2,7 @@
 title: "Publishing Your Web Page"
 chapter: "Chapter 2"
 description: "Chapter 2 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2024-07-04
+date: 2025-07-20
 previous: 
   name: "Chapter 1"
   link: "/chapter-1-making-your-first-web-page/"
@@ -45,11 +45,11 @@ That's it! Believe it or not, your web page is now publicly available on the int
 
 ## Visiting Your Web Page
 
-Netlify generated a random, unique domain name for our website: `https://sensational-duckanoo-efb1d0.netlify.app`. If you're following these instructions, Netlify generated a domain name for you, too. Go ahead and open the domain name Netlify generated for you. After you enter the password, you should see your website, as shown below.
+Netlify generated a random, unique domain name for my website: `https://sensational-duckanoo-efb1d0.netlify.app`. If you're following these instructions, Netlify generated a domain name for you, too. Go ahead and open the domain name Netlify generated for you. After you enter the password, you should see your website, as shown below.
 
 ![Our example website, hosted by Netlify](/images/figures/figure-7.png)
 
-Notice the URL in the address bar of the web browser—that's the domain name for our website hosted on Netlify's servers. We could give this to anyone on the planet and they could access our website! 
+Notice the URL in the address bar of the web browser—that's the domain name for the website hosted on Netlify's servers. We could give this to anyone on the planet and they could access our website! 
 
 ## Creating a Netlify Account
 
