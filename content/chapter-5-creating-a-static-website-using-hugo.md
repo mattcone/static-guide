@@ -2,7 +2,7 @@
 title: "Creating a Static Website Using Hugo"
 chapter: "Chapter 5"
 description: "Chapter 5 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2025-06-28
+date: 2025-07-19
 previous: 
   name: "Chapter 4"
   link: "/chapter-4-styling-elements-with-css/"
@@ -288,7 +288,7 @@ pagination.pagerSize = 5
 [params]
   contentTypeName = "posts"
   themeColor = "orange"
-  showMenuItems = 1
+  showMenuItems = 5
   fullWidthTheme = false
   centerTheme = true
 
@@ -330,7 +330,7 @@ If everything works, and the server starts, we'll see the following output:
 ```bash
 mcone@roadrunner heroic-tiramisu % hugo serve
 Watching for changes in /Users/mcone/Documents/heroic-tiramisu/{archetypes,assets,content,data,i18n,layouts,static,themes}
-Watching for config changes in /Users/mcone/Documents/heroic-tiramisu/hugo.toml, /Users/mcone/heroic-tiramisu/themes/terminal/config.toml
+Watching for config changes in /Users/mcone/Documents/heroic-tiramisu/hugo.toml, /Users/mcone/heroic-tiramisu/themes/terminal/hugo.toml
 Start building sites …
 hugo v0.147.9+extended+withdeploy darwin/arm64 BuildDate=2025-06-23T08:22:20Z VendorInfo=brew
 

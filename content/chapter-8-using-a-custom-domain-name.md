@@ -1,14 +1,14 @@
 ---
 title: "Using a Custom Domain Name"
-chapter: "Chapter 7"
-description: "Chapter 7 of the Static Site Guide, a book that explains how to build a static website from scratch."
+chapter: "Chapter 8"
+description: "Chapter 8 of the Static Site Guide, a book that explains how to build a static website from scratch."
 date: 2025-06-07
 previous: 
-  name: "Chapter 6"
-  link: "/chapter-6-customizing-your-hugo-website/"
+  name: "Chapter 7"
+  link: "/chapter-7-extending-your-hugo-website/"
 next: 
-  name: "Chapter 8"
-  link: "/chapter-8-implementing-version-control/"
+  name: "Chapter 9"
+  link: "/chapter-9-implementing-version-control/"
 ---
 
 One issue we need to address is our domain name. The random, unique domain name that Netlify generated for our website has been useful for testing, but it's not something we want to use forever. 

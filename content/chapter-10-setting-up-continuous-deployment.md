@@ -1,14 +1,14 @@
 ---
 title: "Setting up Continuous Deployment"
-chapter: "Chapter 9"
-description: "Chapter 9 of the Static Site Guide, a book that explains how to build a static website from scratch."
+chapter: "Chapter 10"
+description: "Chapter 10 of the Static Site Guide, a book that explains how to build a static website from scratch."
 date: 2025-06-07
 previous: 
-  name: "Chapter 8"
-  link: "/chapter-8-implementing-version-control/"
+  name: "Chapter 9"
+  link: "/chapter-9-implementing-version-control/"
 next:
-  name: "Chapter 10"
-  link: "/chapter-10-getting-traffic-and-making-money/"
+  name: "Chapter 11"
+  link: "/chapter-11-getting-traffic-and-making-money/"
 ---
 
 You probably don’t need me to tell you this, but some of the technology available today is incredible, if not downright magical. It can automate manual tasks at the push of a button and turn previously tedious tasks into an invisible afterthought. That’s how I like to think about the topic of this chapter: *Continuous deployment*.
@@ -53,7 +53,7 @@ Netlify will check out your repository, build your website, and deploy it. We've
 
 ## Making a Test Change
 
-Let's make a test change so we can see how continuous deployment works in practice. We can do this by editing the [blog post we created in the previous chapter](/chapter-8-implementing-version-control/#creating-a-feature-branch-and-adding-a-blog-post), pushing it to GitHub, and watching Netlify automatically deploy it.
+Let's make a test change so we can see how continuous deployment works in practice. We can do this by editing the [blog post we created in the previous chapter](/chapter-9-implementing-version-control/#creating-a-feature-branch-and-adding-a-blog-post), pushing it to GitHub, and watching Netlify automatically deploy it.
 
 First, switch to GitHub Desktop and make sure you're working in the `main` branch. We're not going to use a feature branch for this change.
 

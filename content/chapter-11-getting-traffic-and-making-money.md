@@ -1,11 +1,11 @@
 ---
 title: "Getting Traffic and Making Money"
-chapter: "Chapter 10"
-description: "Chapter 10 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2025-06-07
+chapter: "Chapter 11"
+description: "Chapter 11 of the Static Site Guide, a book that explains how to build a static website from scratch."
+date: 2025-07-19
 previous: 
-  name: "Chapter 9"
-  link: "/chapter-9-setting-up-continuous-deployment/"
+  name: "Chapter 10"
+  link: "/chapter-10-setting-up-continuous-deployment/"
 next: 
   name: "Conclusion"
   link: "/conclusion/"
@@ -31,11 +31,11 @@ You can view the sitemap file for your website by appending `sitemap.xml` to you
 
 Let's make a few small changes before submitting the sitemap to Google. 
 
-### Updating Your Website's config.toml File
+### Updating Your Website's hugo.toml File
 
-Beginning in [Chapter 5](/chapter-5-creating-a-static-website-using-hugo/#configuring-the-theme), we made several modifications to our website's `config.toml` file. Since Hugo uses information in that file to generate the `sitemap.xml` file, we'll need to update the `config.toml` file again to add our website's custom domain. 
+Beginning in [Chapter 5](/chapter-5-creating-a-static-website-using-hugo/#configuring-the-theme), we made several modifications to our website's `hugo.toml` file. Since Hugo uses information in that file to generate the `sitemap.xml` file, we'll need to update the `hugo.toml` file again to add our website's custom domain. 
 
-Make sure the `baseURL` setting on the first line of `config.toml` contains the URL of your website, as shown below.
+Make sure the `baseURL` setting on the first line of `hugo.toml` contains the URL of your website, as shown below.
 
 ```toml {hl_lines=["1"]}
 baseURL = "https://heroictiramisu.com/"
@@ -45,8 +45,8 @@ paginate = 5
 
 [params]
   contentTypeName = "posts"
-  themeColor = "turquoise"
-  showMenuItems = 1
+  themeColor = "orange"
+  showMenuItems = 5
   fullWidthTheme = false
   centerTheme = true
 ```
@@ -63,13 +63,13 @@ After you've done that, Google will need to verify that you own the domain you'r
 
 ![DNS verification in Google Search Console](/images/figures/figure-77.png)
 
-Click **Start verification**. If you're using Cloudflare as your domain registrar, as covered in [Chapter 7](/chapter-7-using-a-custom-domain-name/), your web browser will open the Cloudflare website in a new tab and attempt to create the new DNS record needed for Google's verification process, as shown below.
+Click **Start verification**. If you're using Cloudflare as your domain registrar, as covered in [Chapter 8](/chapter-8-using-a-custom-domain-name/), your web browser will open the Cloudflare website in a new tab and attempt to create the new DNS record needed for Google's verification process, as shown below.
 
 ![Creating the new DNS record for DNS verification in Cloudflare](/images/figures/figure-78.png)
 
 Click **Authorize**. When you switch back to the Google Search Console tab in your web browser, you should see a success message. You've successfully verified that you own the domain.
 
-{{< aside type="tip" >}}In [Chapter 7](/chapter-7-using-a-custom-domain-name/), we used DNS records to point our domain name to Netlify. This DNS record is different and doesn’t change how our website works. It’s just a code that Google uses to establish that you own the domain.
+{{< aside type="tip" >}}In [Chapter 8](/chapter-8-using-a-custom-domain-name/), we used DNS records to point our domain name to Netlify. This DNS record is different and doesn’t change how our website works. It’s just a code that Google uses to establish that you own the domain.
 {{< /aside >}}
 
 ### Submitting the Sitemap

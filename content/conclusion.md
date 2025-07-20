@@ -3,8 +3,8 @@ title: "Conclusion"
 date: 2024-07-25
 description: "The conclusion to the Static Site Guide, a book that explains how to build a static website from scratch."
 previous:
-  name: "Chapter 10"
-  link: "/chapter-10-getting-traffic-and-making-money/"
+  name: "Chapter 11"
+  link: "/chapter-11-getting-traffic-and-making-money/"
 ---
 
 Congratulations on completing *The Static Site Guide*! Pat yourself on the back. You've successfully created a static website with a custom domain name, version control, and continuous integration. You're also well on your way to driving traffic to your website and monetizing it.

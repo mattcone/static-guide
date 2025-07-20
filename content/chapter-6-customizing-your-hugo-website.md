@@ -2,13 +2,13 @@
 title: "Customizing Your Hugo Website"
 chapter: "Chapter 6"
 description: "Chapter 6 of the Static Site Guide, a book that explains how to build a static website from scratch."
-date: 2025-07-04
+date: 2025-07-19
 previous: 
   name: "Chapter 5"
   link: "/chapter-5-creating-a-static-website-using-hugo/"
 next:
   name: "Chapter 7"
-  link: "/chapter-7-using-a-custom-domain-name/"
+  link: "/chapter-7-extending-your-hugo-website/"
 ---
 
 We've installed a theme and customized it, but as we just saw, our website is still just a skeleton. Let's start adding content by creating our first blog post.
@@ -168,7 +168,7 @@ pagination.pagerSize = 5
 [params]
   contentTypeName = "posts"
   themeColor = "orange"
-  showMenuItems = 1
+  showMenuItems = 5
   fullWidthTheme = false
   centerTheme = true
 
@@ -302,10 +302,6 @@ Now that our website is built, we can upload it to Netlify. The process is the s
 ![Uploading the website to Netlify](/images/figures/figure-17.png)
 
 After Netlify uploads your website, type in your domain name to see your updated website. The updates have been published on the internet. You've successfully published your Hugo static site on Netlify!
-
-{{< aside type="tip" >}}
-As a reminder, you can find the source code for the website we just created in the [GitHub repository](https://github.com/heroictiramisu/heroic-tiramisu).
-{{< /aside >}}
 
 ## Keeping Hugo Updated
 

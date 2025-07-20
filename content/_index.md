@@ -37,13 +37,14 @@ This is a book about creating and publishing static websites using HTML, CSS, an
   <span class="part-label">(Part 2: Hugo)</span>
 </li>
 <li class="contents"><a href="chapter-6-customizing-your-hugo-website/">Customizing Your Hugo Website</a></li>
+<li class="contents"><a href="chapter-7-extending-your-hugo-website/">Extending Your Hugo Website</a></li>
 <li class="contents">
-  <a href="chapter-7-using-a-custom-domain-name/">Using a Custom Domain Name</a>
+  <a href="chapter-8-using-a-custom-domain-name/">Using a Custom Domain Name</a>
   <span class="part-label">(Part 3: Going Live)</span>
 </li>
-<li class="contents"><a href="chapter-8-implementing-version-control/">Implementing Version Control</a></li>
-<li class="contents"><a href="chapter-9-setting-up-continuous-deployment/">Setting up Continuous Deployment</a></li>
-<li class="contents"><a href="chapter-10-getting-traffic-and-making-money/">Getting Traffic and Making Money</a></li>
+<li class="contents"><a href="chapter-9-implementing-version-control/">Implementing Version Control</a></li>
+<li class="contents"><a href="chapter-10-setting-up-continuous-deployment/">Setting up Continuous Deployment</a></li>
+<li class="contents"><a href="chapter-11-getting-traffic-and-making-money/">Getting Traffic and Making Money</a></li>
 <li class="contents-intro"><a href="conclusion/">Conclusion</a></li>
 </ol>
 

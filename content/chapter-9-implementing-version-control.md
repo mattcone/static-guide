@@ -1,14 +1,14 @@
 ---
 title: "Implementing Version Control"
-chapter: "Chapter 8"
-description: "Chapter 8 of the Static Site Guide, a book that explains how to build a static website from scratch."
+chapter: "Chapter 9"
+description: "Chapter 9 of the Static Site Guide, a book that explains how to build a static website from scratch."
 date: 2025-06-28
 previous: 
-  name: "Chapter 7"
-  link: "/chapter-7-using-a-custom-domain-name/"
+  name: "Chapter 8"
+  link: "/chapter-8-using-a-custom-domain-name/"
 next: 
-  name: "Chapter 9"
-  link: "/chapter-9-setting-up-continuous-deployment/"
+  name: "Chapter 10"
+  link: "/chapter-10-setting-up-continuous-deployment/"
 ---
 
 Now it’s time to explore a new topic: version control. Version control can help you keep track of changes to files over time and manage contributions from other individuals.
