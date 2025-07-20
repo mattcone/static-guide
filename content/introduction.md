@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-date: 2025-06-04
+date: 2025-07-19
 description: "The introduction to the Static Site Guide, a free and open-source reference guide that explains how to build a static website from scratch."
 previous: 
   name: "Author's Note"
@@ -86,7 +86,7 @@ I believe that people learn best by trying things on their own. That’s why thi
 
 The book contains three parts. **Part One** shows you how to write HTML code using a text editor. You'll learn how to add elements like links and images to your web pages, change the look and feel of HTML elements with CSS, upload the files to a cloud hosting service, and share your website's URL with friends and family. 
 
-**Part Two** walks you through the process of creating a website using the Hugo static site generator. You'll learn how to install Hugo on your computer, select and customize a theme, add Markdown-formatted content, and build the site and upload it to a cloud hosting service.
+**Part Two** walks you through the process of creating a website using the Hugo static site generator. You'll learn how to install Hugo on your computer, select and customize a theme, add Markdown-formatted content, build the site, and upload it to a cloud hosting service.
 
 **Part Three** shows you how to put the finishing touches on your website and deal with practical matters like launching and hosting. You'll learn how to buy a custom domain name and add DNS records to connect the domain name to your website, use version control to track changes, automatically deploy with continuous integration, submit your sitemap to search engines, and start monetizing traffic.
 
