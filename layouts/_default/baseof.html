@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     {{ hugo.Generator }}
+
+    {{- $cover := resources.Get "images/static-site-guide-cover.jpg" -}}
+    {{- $coverOG := $cover.Resize "800x" -}}
+    {{- $coverPreload := $cover.Resize "525x" -}}
+
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +16,7 @@
     {{ if not .IsHome }}<title>{{ if .Params.chapter }}{{ .Params.chapter }}: {{ end }}{{ .Params.title }} | Static Site Guide</title>{{ end }}
     {{ if .IsHome }}<meta name="description" content="A book that explains how to build a static website using HTML, CSS, and the Hugo static site generator.">{{ end }}
     {{ if not .IsHome }}<meta name="description" content="{{ .Params.description }}">{{ end }}
-    {{ if .IsHome }}<link rel="preload" as="image" href="https://staticguide.imgix.net/images/static-site-guide-cover.jpg?w=525&auto=compress,format">{{ end }}
+    {{ if .IsHome }}<link rel="preload" as="image" href="{{ $coverPreload.RelPermalink }}">{{ end }}
     <link rel="preload" href="/fonts/equity_a_regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="/fonts/equity_a_italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="/fonts/equity_a_bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -23,11 +28,11 @@
     <link rel="stylesheet" href="/css/syntax.css">
 
     <meta name="author" content="Matt Cone">
-    <meta name="image" property="og:image" content="https://staticguide.imgix.net/images/static-site-guide-cover.jpg">
+    <meta name="image" property="og:image" content="{{ $coverOG.Permalink }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ if .IsHome }}The Static Site Guide{{ end }}{{ if not .IsHome }}{{ if .Params.chapter }}{{ .Params.chapter }}: {{ end }}{{ .Params.title }}{{ end }}">
     <meta name="twitter:description" content="{{ if .IsHome }}A book that explains how to build a static website using HTML, CSS, and the Hugo static site generator.{{ end }}{{ if not .IsHome }}{{ .Params.description }}{{ end }}">
-    <meta name="twitter:image" content="https://staticguide.imgix.net/images/static-site-guide-cover.jpg">
+    <meta name="twitter:image" content="{{ $coverOG.Permalink }}">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Matt Cone">
     <meta property="og:title" content="{{ if .IsHome }}The Static Site Guide{{ end }}{{ if not .IsHome }}{{ if .Params.chapter }}{{ .Params.chapter }}: {{ end }}{{ .Params.title }}{{ end }}">
@@ -36,10 +41,10 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="staticguide.org">
     <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="https://staticguide.imgix.net/images/static-site-guide-cover.jpg">
+    <meta property="og:image" content="{{ $coverOG.Permalink }}">
     <meta property="og:image:alt" content="The cover of the Static Site Guide book.">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="1039">
+    <meta property="og:image:width" content="{{ $coverOG.Width }}">
+    <meta property="og:image:height" content="{{ $coverOG.Height }}">
 
     <script defer data-domain="staticguide.org" src="https://hawk.forklabs.com/js/plausible.js"></script>
   </head>

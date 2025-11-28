@@ -1,23 +1,12 @@
 ---
 title: "The Static Site Guide"
-date: 2025-06-19
+date: 2025-11-28
 ---
 
 This is a book about creating and publishing static websites using HTML, CSS, and the Hugo static site generator. It's still a work in progress, but you can read the draft chapters here.
 
 <p style="text-align: center; padding-top: 1em">
-  <a href="introduction/">
-  <img 
-       fetchpriority="high"
-       width="525"
-       height="683"
-       srcset="https://staticguide.imgix.net/images/static-site-guide-cover.jpg?w=525&auto=compress,format&dpr=1 1x,
-               https://staticguide.imgix.net/images/static-site-guide-cover.jpg?w=525&auto=format&q=40&dpr=2 2x,
-               https://staticguide.imgix.net/images/static-site-guide-cover.jpg?w=525&auto=format&q=20&dpr=3 3x"
-       src="https://staticguide.imgix.net/images/static-site-guide-cover.jpg"
-       class="img-fluid" alt="Cover of the Static Site Guide book"
-   >
-   </a>
+  {{< images src="images/static-site-guide-cover.jpg" alt="Cover of the Static Site Guide book" width="525" link="introduction/" >}}
 </p>
 
 ## Table of Contents

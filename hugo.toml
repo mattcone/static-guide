@@ -20,3 +20,7 @@ home = ["HTML"]
 [markup.highlight]
   noClasses = false
   style = "github"
+
+[imaging]
+  quality = 100
+  resampleFilter = "Lanczos"

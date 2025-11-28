@@ -5,6 +5,7 @@ node_modules
 .hugo_build.lock
 deploy.sh
 static/fonts
+resources/
 
 # Local Netlify folder
 .netlify

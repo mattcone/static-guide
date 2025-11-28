@@ -1,11 +1,63 @@
-{{ if hugo.IsProduction }}
-<img loading="lazy"
-srcset="https://staticguide.imgix.net{{ .Destination | safeURL }}{{ if in .Destination "?" }}&{{ else }}?{{ end }}w=700&auto=compress,format&dpr=1 1x,
-        https://staticguide.imgix.net{{ .Destination | safeURL }}{{ if in .Destination "?" }}&{{ else }}?{{ end }}w=700&auto=format&q=40&dpr=2 2x,
-        https://staticguide.imgix.net{{ .Destination | safeURL }}{{ if in .Destination "?" }}&{{ else }}?{{ end }}w=700&auto=format&q=20&dpr=3 3x"
-src="https://staticguide.imgix.net{{ .Destination | safeURL }}"
-class="img-fluid" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }}
->
-{{ else }}
-<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} class="img-fluid" />
-{{ end }}
+{{- $src := .Destination -}}
+{{- $alt := .Text -}}
+{{- $title := .Title -}}
+
+{{- /* Strip leading slash to match assets path */ -}}
+{{- $assetPath := strings.TrimPrefix "/" $src -}}
+
+{{- /* Try to get the image as a resource */ -}}
+{{- $img := resources.Get $assetPath -}}
+
+{{- if and hugo.IsProduction $img -}}
+  {{- /* Process WebP versions */ -}}
+  {{- $webp700 := $img.Resize "700x webp q100" -}}
+  {{- $webp1400 := $img.Resize "1400x webp q95" -}}
+  {{- $webp2100 := $img.Resize "2100x webp q90" -}}
+  
+  {{- /* Process fallback versions in original format */ -}}
+  {{- $fall700 := $img.Resize "700x q100" -}}
+  {{- $fall1400 := $img.Resize "1400x q95" -}}
+  {{- $fall2100 := $img.Resize "2100x q90" -}}
+  
+  <picture>
+    <source
+      type="image/webp"
+      srcset="{{ $webp700.RelPermalink }} 700w,
+              {{ $webp1400.RelPermalink }} 1400w,
+              {{ $webp2100.RelPermalink }} 2100w"
+      sizes="(max-width: 700px) 100vw, 700px"
+    >
+    <source
+      type="{{ $fall700.MediaType }}"
+      srcset="{{ $fall700.RelPermalink }} 700w,
+              {{ $fall1400.RelPermalink }} 1400w,
+              {{ $fall2100.RelPermalink }} 2100w"
+      sizes="(max-width: 700px) 100vw, 700px"
+    >
+    <img
+      loading="lazy"
+      src="{{ $fall700.RelPermalink }}"
+      width="{{ $fall700.Width }}"
+      height="{{ $fall700.Height }}"
+      class="img-fluid"
+      alt="{{ $alt }}"
+      {{- with $title }} title="{{ . }}"{{ end -}}
+    >
+  </picture>
+{{- else if $img -}}
+  <img
+    src="{{ $img.RelPermalink }}"
+    width="{{ $img.Width }}"
+    height="{{ $img.Height }}"
+    class="img-fluid"
+    alt="{{ $alt }}"
+    {{- with $title }} title="{{ . }}"{{ end -}}
+  >
+{{- else -}}
+  <img
+    src="{{ $src | safeURL }}"
+    class="img-fluid"
+    alt="{{ $alt }}"
+    {{- with $title }} title="{{ . }}"{{ end -}}
+  >
+{{- end -}}

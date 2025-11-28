@@ -1,0 +1,47 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+{{- $width := .Get "width" | default "525" | int -}}
+{{- $link := .Get "link" -}}
+
+{{- $width2x := mul $width 2 -}}
+{{- $width3x := mul $width 3 -}}
+
+{{- $img := resources.Get $src -}}
+
+{{- if $img -}}
+  {{- $webp1x := $img.Resize (printf "%dx webp q100" $width) -}}
+  {{- $webp2x := $img.Resize (printf "%dx webp q95" $width2x) -}}
+  {{- $webp3x := $img.Resize (printf "%dx webp q90" $width3x) -}}
+  
+  {{- $fall1x := $img.Resize (printf "%dx q100" $width) -}}
+  {{- $fall2x := $img.Resize (printf "%dx q95" $width2x) -}}
+  {{- $fall3x := $img.Resize (printf "%dx q90" $width3x) -}}
+
+  {{- with $link }}<a href="{{ . }}">{{ end -}}
+  <picture>
+    <source
+      type="image/webp"
+      srcset="{{ $webp1x.RelPermalink }} 1x,
+              {{ $webp2x.RelPermalink }} 2x,
+              {{ $webp3x.RelPermalink }} 3x"
+    >
+    <source
+      type="{{ $fall1x.MediaType }}"
+      srcset="{{ $fall1x.RelPermalink }} 1x,
+              {{ $fall2x.RelPermalink }} 2x,
+              {{ $fall3x.RelPermalink }} 3x"
+    >
+    <img
+      fetchpriority="high"
+      src="{{ $fall1x.RelPermalink }}"
+      width="{{ $webp1x.Width }}"
+      height="{{ $webp1x.Height }}"
+      class="img-fluid"
+      alt="{{ $alt }}"
+    >
+  </picture>
+  {{- with $link }}</a>{{ end -}}
+
+{{- else -}}
+  <p style="color: red;">IMAGE NOT FOUND: {{ $src }}</p>
+{{- end -}}

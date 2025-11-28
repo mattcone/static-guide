@@ -32,11 +32,73 @@ Dynamic websites have powerful collaborative and interactive features, but the a
 
 Static websites are easy to build, inexpensive to host, and virtually impossible to hack. They're elegant, fast, and simple. But simple doesn't mean boring. Static websites are some of the most ground-breaking and beautifully designed websites today. Take a look at these examples. 
 
-{{< intro-images >}}
+<div class="container intro-images text-center">
+  <div class="row">
+    <div class="col-sm-6">
+      <a href="https://www.mailta.pe/" target="_blank" rel="nofollow noopener noreferrer">
+        {{< images src="images/figures/figure-84.png" alt="MailTape website" width="650" >}}
+      </a>
+    </div>
+    <div class="col-sm-6">
+      <a href="https://www.plainlanguage.gov/" target="_blank" rel="nofollow noopener noreferrer">
+        {{< images src="images/figures/figure-88.png" alt="The plainlanguage.gov website" width="650" >}}
+      </a>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-sm-6">
+      <a href="https://paulstamatiou.com/" target="_blank" rel="nofollow noopener noreferrer">
+        {{< images src="images/figures/figure-85.png" alt="Paul Stamatiou's personal website" width="650" >}}
+      </a>
+    </div>
+    <div class="col-sm-6">
+      <a href="https://getbootstrap.com/" target="_blank" rel="nofollow noopener noreferrer">
+        {{< images src="images/figures/figure-90.png" alt="Bootstrap website" width="650" >}}
+      </a>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <a href="https://www.digital-democracy.org/" target="_blank" rel="nofollow noopener noreferrer">
+          {{< images src="images/figures/figure-89.png" alt="Digital Democracy website" width="650" >}}
+        </a>
+      </div>
+      <div class="col-sm-6">
+        <a href="https://maggieappleton.com/" target="_blank" rel="nofollow noopener noreferrer">
+          {{< images src="images/figures/figure-101.png" alt="Maggie Appleton's website" width="650" >}}
+        </a>
+      </div>
+  </div>
+</div>
 
 Not all static websites are beautiful, and there's nothing wrong with that! Some of the best static websites prioritize practicality over design. Take a look at the examples below. These static websites won't win design awards, but they're efficient and effective. They're popular because they present great content in an easy-to-read format.
 
-{{< intro-images-2 >}}
+<div class="container intro-images text-center">
+  <div class="row">
+    <div class="col-sm-6">
+      <a href="https://solar.lowtechmagazine.com/" target="_blank" rel="nofollow noopener noreferrer">
+        {{< images src="images/figures/figure-102.png" alt="Low Tech Magazine website" width="650" >}}
+      </a>
+    </div>
+    <div class="col-sm-6">
+      <a href="https://www.carabinercollection.com/" target="_blank" rel="nofollow noopener noreferrer">
+        {{< images src="images/figures/figure-103.png" alt="The Carabiner Collection website" width="650" >}}
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <a href="https://clubnintendoarchives.neocities.org/" target="_blank" rel="nofollow noopener noreferrer">
+        {{< images src="images/figures/figure-104.png" alt="The Club Nintendo Archives website" width="650" >}}
+      </a>
+    </div>
+    <div class="col-sm-6">
+      <a href="https://www.htmlhobbyist.com/" target="_blank" rel="nofollow noopener noreferrer">
+        {{< images src="images/figures/figure-105.png" alt="The HTML Hobbyist website" width="650" >}}
+      </a>
+    </div>
+  </div>
+</div>
 
 *The Static Site Guide* only covers static websites because I think static websites are the best option for most people. You can use static websites for blogs, marketing websites, personal portfolios, and more. But even if you decide to create a dynamic website using WordPress or a commercial website-building service, knowing how static websites work can help you build a better dynamic website.
 

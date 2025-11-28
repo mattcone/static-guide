@@ -136,7 +136,7 @@ To help you get started, I’ve created a table with examples of some of the mos
 | Horizontal rule | `<hr>` | <hr> |
 | Blockquote | `<blockquote>A quote</blockquote>` | <blockquote>A quote</blockquote> |
 | Link | `<a href="https://www.example.com">This is a link</a>` | <a href="https://www.example.com" target="_blank" rel="nofollow noopener noreferrer">This is a link</a> |
-| Image | `<img src="image.jpg" alt="An image">` | <img loading="lazy" src="https://mdg.imgix.net/assets/images/tux.png?auto=format&fit=clip&q=30&w=80" alt="Tux"> | 
+| Image | `<img src="image.jpg" alt="An image">` | <img src="/images/tux.png" alt="Tux" width="80"> | 
 | Unordered list | `<ul>`<br>&nbsp;&nbsp;`<li>first</li>`<br>&nbsp;&nbsp;`<li>second</li>`<br>`</ul>` | <ul><li>first</li><li>second</li></ul> |
 | Ordered list | `<ol>`<br>&nbsp;&nbsp;`<li>first</li>`<br>&nbsp;&nbsp;`<li>second</li>`<br>`</ol>` | <ol><li>first</li><li>second</li></ol> |
 {{</table>}}
