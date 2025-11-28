@@ -2,7 +2,7 @@
 
 *[The Static Site Guide](https://www.staticguide.org)* is a book about creating and publishing static websites using HTML, CSS, and the Hugo static site generator. Read it online at <https://www.staticguide.org>.
 
-<img src="https://github.com/mattcone/static-guide/blob/main/static/images/static-site-guide-cover.jpg" width="300">
+<img src="https://github.com/mattcone/static-guide/blob/main/assets/images/static-site-guide-cover.jpg" width="300">
 
 ## Example code
 
